@@ -1,7 +1,7 @@
 <template lang="">
     <div>
-        <button v-on:click="inc">+</button>
-        <button v-on:click="dec">-</button>
+        <button v-on:click="counter('+')">+</button>
+        <button v-on:click="counter('-')">-</button>
         <div>{{count}}</div>
     </div>
 </template>
@@ -15,12 +15,15 @@ export default {
         }
     },
     methods:{
-        inc(){
-            this.count=this.count+1
-        },
-        dec(){
-            this.count=this.count-1
+        counter(value){
+            if(value=='+'){
+
+                this.count=this.count+1
+            }else{
+                this.count=this.count-1
+            }
         }
+       
     }
 }
 </script>
